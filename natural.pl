@@ -2,7 +2,7 @@
 /*
 
 natural(N)
-	es cierto si N es un numero natural.
+	es cierto si N es un número natural.
 	
 
 Principio de Inducción Matemática
