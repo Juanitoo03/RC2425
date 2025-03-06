@@ -7,10 +7,10 @@ likes(malena, esteban).
 likes(gustavo, valeria).
 
 % a -> b, b:- a.
-pairing(A, _):- chatty(A).
-pairing(_, A):- chatty(A).
+pairing(A, B):- chatty(A), A \= B.
+pairing(B, A):- chatty(A), A \= B.
 
 % a & b -> c, c:- a, b.
-pairing(A, B):- likes(A,B), likes(B,A).
+pairing(A, B):- likes(A,B), likes(B,A), A \= B.
 
 seating(A, B, C, D ,E):- pairing(A,B), pairing(B,C), pairing(C,D), pairing(D,E).
