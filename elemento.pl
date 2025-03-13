@@ -13,5 +13,6 @@ elemento_n(+Lista, +N, -R)
 elemento_n([Cab|_], 1, cab).
 
 elemento_n([_|Resto], N, R):- 
+  N > 1,
   N2 is N-1,
-  elemento_n(Resto, N2, R),
+  elemento_n(Resto, N2, R).
