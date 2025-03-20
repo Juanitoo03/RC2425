@@ -9,7 +9,7 @@ isogram(String).
 
 /*
 
-quitar_blancos(Lista, R)
+quitar_blancos(Lista, R).
 	es cierto si R unifica con una lista con los
 	caracteres de Lista eliminando espacios en blanco
 	y guiones.
@@ -30,6 +30,9 @@ quitar_blancos([Cab|Resto], [Cab|R]):-
 
 /*
 
-lower_case(Lista, R)
+lower_case(Lista, R).
+
+downcase_atom(+AnyCase, -LoweCase).
 
 */
+
