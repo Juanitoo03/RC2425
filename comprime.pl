@@ -6,9 +6,6 @@ comprime(Lista, R)
 	
   comprime([a,a,a,b,b,c,a,a], R).
   R=[(a,3),(b,2),(c,1),(a,2)].
-
-  comprime([a,a,b,b,c,a,a], R).
-  R=[(a,2),(b,2),(c,1),(a,2)].
   
 */
 
