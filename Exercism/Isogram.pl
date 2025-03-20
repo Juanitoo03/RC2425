@@ -36,3 +36,7 @@ downcase_atom(+AnyCase, -LoweCase).
 
 */
 
+lower_case([], []).
+
+lower_case([Cab|Resto], [R2|R]):- 
+	lower_case(Resto, R), downcase_atom(Cab, R2).
