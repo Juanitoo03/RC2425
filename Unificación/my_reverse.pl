@@ -5,6 +5,15 @@ my_reverse(?Lista, ?Resultado)
   que contiene los elementos de Lista en orden
   inverso.
 
-  my_reverse(
+  my_reverse([1,2,3,4,5], R).
+  R = [5,4,3,2,1].
+
+  Induccion
+  1) P(n0)
+  2) P(n-1) -> P(n)
+     P(n):- P(n-1)
 
 */
+
+my_reverse([], []).
+my_reverse([Cab|Resto]):- my_reverse(Resto, R).
