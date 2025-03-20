@@ -6,6 +6,7 @@ my_append(?List1, ?List2, ?Result)
   de los elementos de List2 en el mismo orden.
 
 Principio de Inducción
-
-
+  1) P(n0)
+  2) para todo n > n0, P(n-1) -> P(n2
+  
 */
