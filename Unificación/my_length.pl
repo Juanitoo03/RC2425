@@ -1,11 +1,10 @@
- 
+/* 
 Unificación
 
 Dos términos unifican si:
 
 1. (No hay variables libres) unifican si los términos son idénticos.
 
-/*
 my_length(List, Num)
   es cierto si Num unifica con el número de elementos de List.
 
