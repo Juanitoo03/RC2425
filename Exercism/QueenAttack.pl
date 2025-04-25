@@ -13,7 +13,7 @@ attack((FromX, FromY), (ToX, ToY)):-
 	fail.
 
 same_row((_, Y), (_, Y)).
-same_col((X, _), (_, X)).
+same_col((X, _), (X, _)).
 same_diag((X, Y), (X2, Y2)):- abs(X - X2) =:= abs(Y - Y2).
 
 same_diag((X, Y), (X2, Y2)):- N is X2 - X, N is Y - Y2.
