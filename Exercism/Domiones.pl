@@ -1,13 +1,15 @@
-can_chain(List):- path(List, A, A, _). 
-  
-connect(A,B, List, R):- member((A,B), List), 
-  append(L1, [(A,B)|L2], List),
-  append(L1, L2, R).
-connect(A,B, List, R):- member((B,A), List), 
-  append(L1, [(B,A)|L2], List),
-  append(L1, L2, R).
-
-path([], _, _, []). 
-path(List, A, B, [(A,TMP)|R]):- length(List, L),
-  connect(A, TMP, List, Rest), path(Rest, TMP, B, R), L2 is L - 1, 
-  length(R,L2), append(_, [(_,B)], R).
+match(Pieces, [(A,B)|T], [New,(A,B)|T], NewPieces) :-
+  member((X,A), Pieces) -> New = (X,A), selectchk((X,A), Pieces, NewPieces) ;
+  member((A,X), Pieces) -> New = (X,A), selectchk((A,X), Pieces, NewPieces).
+solve_([], Chain, Chain).
+solve_(Pieces, Chain, RC) :-
+  match(Pieces, Chain, NC, NP),
+  solve_(NP, NC, RC).
+solve([], []).
+solve(Pieces, Chain) :-
+  member((A,B), Pieces),
+  select((A,B), Pieces, NP), 
+  (solve_(NP, [(B,A)], Chain) ; solve_(NP, [(A,B)], Chain)),
+  last(Chain, (_, E)), Chain = [(E, _)|_].
+can_chain([]) :- !.
+can_chain(XS) :- solve(XS, _), !.
